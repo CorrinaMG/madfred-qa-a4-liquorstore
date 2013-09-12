@@ -1,18 +1,27 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class TestAgeChecker {
-	/*---------------------------------
-	 * In this file, you will write  
-	 * Unit Tests for the concatenateNames()
-	 * and verifyAgeRestriction() modules
-	 * you coded in the AgeChecker class.
-	 * 
-	 * When you're finished writing the tests,
-	 * run the debugger in Eclipse to verify
-	 * that the two modules function correctly.
-	 * 
-	 * Finally, delete these instructions, 
-	 * then commit and push the LiquorStore 
-	 * project to GitHub.
-	 ---------------------------------*/
 
+	AgeChecker tester = new AgeChecker();
+
+	@Test
+	public void testVerifyAgeRestrictionTrue() {
+		boolean result = tester.verifyLegalAge(1978);
+		assertTrue(result);
+		
+	}
+
+ 	@Test
+ 	public void testVerifyAgeRestrictionFalse() {
+ 		boolean result = tester.verifyLegalAge(2010);
+ 		assertFalse(result);
+
+}
+
+	@Test
+	public void testConcatenateNames() {
+		String result = tester.concatenateNames("Corrina", "Merasty-Gallant");
+		assertEquals(result, "Corrina Merasty-Gallant" );
+	}
 }
